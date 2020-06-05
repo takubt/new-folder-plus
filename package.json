@@ -10,14 +10,54 @@
         "Other"
     ],
     "activationEvents": [
-        "onCommand:extension.sayHello"
+        "*"
     ],
     "main": "./out/extension",
     "contributes": {
         "commands": [
             {
-                "command": "extension.sayHello",
-                "title": "Hello World"
+                "command": "extension.createFromDate",
+                "title": "New Folder(now)"
+            },
+            {
+                "command": "extension.createFromClipboard",
+                "title": "New Folder(clipboard)"
+            }
+        ],
+        "menus": {
+            "explorer/context": [
+                {
+                    "when": "explorerResourceIsFolder",
+                    "command": "extension.createFromDate",
+                    "group": "navigation"
+                },
+                {
+                    "when": "explorerResourceIsFolder",
+                    "command": "extension.createFromClipboard",
+                    "group": "navigation"
+                }
+            ],
+            "commandPalette": [
+                {
+                    "command": "extension.createFromDate",
+                    "when": "false"
+                },
+                {
+                    "command": "extension.createFromClipboard",
+                    "when": "false"
+                }
+            ]
+        },
+        "configuration":[
+            {
+                "title": "NewFolder+",
+                "properties": {
+                    "newFolderPlus.dateFormat": {
+                        "type":"string",
+                        "description": "現在日時からフォルダーを作成する際のフォーマットを指定します",
+                        "default": "YYYYMMDD"
+                    }
+                }
             }
         ]
     },
