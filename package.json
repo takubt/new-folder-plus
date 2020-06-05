@@ -7,6 +7,14 @@
     "engines": {
         "vscode": "^1.45.0"
     },
+    "repository": {
+        "url": "https://github.com/takubt/new-folder-plus.git",
+        "type": "git"
+    },
+    "bugs": {
+        "url": "https://github.com/takubt/new-folder-plus/issues"
+    },
+    "homepage": "https://github.com/takubt/new-folder-plus/blob/master/README.md",
     "categories": [
         "Other"
     ],
